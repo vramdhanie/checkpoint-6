@@ -113,3 +113,24 @@ drill_8.innerHTML = `
    <div class="result">2: ${pinGenerator() % 2 == 0 ? 'Passed' : 'Failed'}</div>
    <div class="result">3: ${pinGenerator() % 2 == 0 ? 'Passed' : 'Failed'}</div>   
 `;
+
+function coinChange(n) {
+  const quarters = Math.trunc(n / 25);
+  n = n % 25;
+  const dimes = Math.trunc(n / 10);
+  n = n % 10;
+  const nickels = Math.trunc(n / 5);
+  const cents = n % 5;
+  return `${quarters} 25 cent pieces, ${dimes} ten cent pieces, ${nickels} five cent pieces and ${cents} one cent pieces`;
+}
+
+const drill_9 = document.getElementById('drill_9');
+drill_9.innerHTML = `
+   <h2>Coin Change</h2>
+   <div class="result">$1.00: ${coinChange(100) == '4 25 cent pieces, 0 ten cent pieces, 0 five cent pieces and 0 one cent pieces' ? 'Passed' : 'Failed'}</div>
+   <div class="result">$0.75: ${coinChange(75) == '3 25 cent pieces, 0 ten cent pieces, 0 five cent pieces and 0 one cent pieces' ? 'Passed' : 'Failed'}</div>
+   <div class="result">$0.74: ${coinChange(74) == '2 25 cent pieces, 2 ten cent pieces, 0 five cent pieces and 4 one cent pieces' ? 'Passed' : 'Failed'}</div> 
+   <div class="result">$0.37: ${coinChange(37) == '1 25 cent pieces, 1 ten cent pieces, 0 five cent pieces and 2 one cent pieces' ? 'Passed' : 'Failed'}</div>  
+   <div class="result">$0.57: ${coinChange(57) == '2 25 cent pieces, 0 ten cent pieces, 1 five cent pieces and 2 one cent pieces' ? 'Passed' : 'Failed'}</div>
+   <div class="result">$0.19: ${coinChange(19) == '0 25 cent pieces, 1 ten cent pieces, 1 five cent pieces and 4 one cent pieces' ? 'Passed' : 'Failed'}</div>
+`;
