@@ -83,3 +83,33 @@ drill_6.innerHTML = `
    <div class="result">11, 60, 50: ${canFit(11, 60, 50) ? 'Failed' : 'Passed'}</div> 
    <div class="result">19, 180, 100: ${canFit(19, 180, 100) ? 'Failed' : 'Passed'}</div>   
 `;
+
+function isOdd(n) {
+  return n % 2 == 1;
+}
+
+const drill_7 = document.getElementById('drill_7');
+drill_7.innerHTML = `
+   <h2>Odd</h2>
+   <div class="result">20: ${isOdd(20) ? 'Failed' : 'Passed'}</div>
+   <div class="result">21: ${isOdd(21) ? 'Passed' : 'Failed'}</div>
+   <div class="result">0: ${isOdd(0) ? 'Failed' : 'Passed'}</div>   
+`;
+
+function pinGenerator() {
+  const min = 10000;
+  const max = 99999;
+  const ran = Math.round(Math.random() * (max - min) + min);
+  if (isOdd(ran)) {
+    ran = ran + 1;
+  }
+  return ran;
+}
+
+const drill_8 = document.getElementById('drill_8');
+drill_8.innerHTML = `
+   <h2>Pin Generator</h2>
+   <div class="result">1: ${pinGenerator() % 2 == 0 ? 'Passed' : 'Failed'}</div>
+   <div class="result">2: ${pinGenerator() % 2 == 0 ? 'Passed' : 'Failed'}</div>
+   <div class="result">3: ${pinGenerator() % 2 == 0 ? 'Passed' : 'Failed'}</div>   
+`;
