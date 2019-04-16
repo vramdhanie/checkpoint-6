@@ -41,3 +41,18 @@ drill_3.innerHTML = `
    <div class="result">27 / 9 => 3 r 0: ${integerDivision(27, 9) === '27 / 9 is 3 with remainder 0' ? 'Passed' : 'Failed'}</div> 
    <div class="result">31 / 9 => 3 r 4: ${integerDivision(31, 9) === '31 / 9 is 3 with remainder 4' ? 'Passed' : 'Failed'}</div>   
 `;
+
+function integerDivision2(a, b) {
+  if(b == 0) {
+    return 'Sorry, cannot divide by zero';
+  } else {
+    return integerDivision(a, b);
+  }
+}
+
+const drill_4 = document.getElementById('drill_4');
+drill_4.innerHTML = `
+   <h2>Integer Division with Validation</h2>
+   <div class="result">4 / 2 => 2 r 0: ${integerDivision2(4, 2) === '4 / 2 is 2 with remainder 0' ? 'Passed' : 'Failed'}</div>
+   <div class="result">4 / 0 => ERROR: ${integerDivision2(4, 0) === 'Sorry, cannot divide by zero' ? 'Passed' : 'Failed'}</div>   
+`;

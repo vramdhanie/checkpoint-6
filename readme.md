@@ -1,4 +1,7 @@
 # Checkpoint 6 : Application Logic
+
+[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/checkpoint-6)
+
 ## Objective 
 By the end of this checkpoint, students can implement logical assertions and conditionals.
 
