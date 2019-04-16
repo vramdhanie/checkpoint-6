@@ -69,3 +69,17 @@ drill_5.innerHTML = `
    <div class="result">11, 60, 61: ${hypotenuse(11, 60) === 61 ? 'Passed' : 'Failed'}</div> 
    <div class="result">19, 180, 181: ${hypotenuse(19, 180) === 181 ? 'Passed' : 'Failed'}</div>   
 `;
+
+function canFit(a, b, r) {
+  const hyp = hypotenuse(a, b);
+  return hyp <= r;
+}
+
+const drill_6 = document.getElementById('drill_6');
+drill_6.innerHTML = `
+   <h2>Can Fit</h2>
+   <div class="result">3, 4, 5: ${canFit(3, 4, 5) ? 'Passed' : 'Failed'}</div>
+   <div class="result">5, 12, 20: ${canFit(5, 12, 20) ? 'Passed' : 'Failed'}</div>
+   <div class="result">11, 60, 50: ${canFit(11, 60, 50) ? 'Failed' : 'Passed'}</div> 
+   <div class="result">19, 180, 100: ${canFit(19, 180, 100) ? 'Failed' : 'Passed'}</div>   
+`;
