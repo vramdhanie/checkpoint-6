@@ -56,3 +56,16 @@ drill_4.innerHTML = `
    <div class="result">4 / 2 => 2 r 0: ${integerDivision2(4, 2) === '4 / 2 is 2 with remainder 0' ? 'Passed' : 'Failed'}</div>
    <div class="result">4 / 0 => ERROR: ${integerDivision2(4, 0) === 'Sorry, cannot divide by zero' ? 'Passed' : 'Failed'}</div>   
 `;
+
+function hypotenuse(a, b) {
+  return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+}
+
+const drill_5 = document.getElementById('drill_5');
+drill_5.innerHTML = `
+   <h2>Hypotenuse</h2>
+   <div class="result">3, 4, 5: ${hypotenuse(3, 4) === 5 ? 'Passed' : 'Failed'}</div>
+   <div class="result">5, 12, 13: ${hypotenuse(5, 12) === 13 ? 'Passed' : 'Failed'}</div>
+   <div class="result">11, 60, 61: ${hypotenuse(11, 60) === 61 ? 'Passed' : 'Failed'}</div> 
+   <div class="result">19, 180, 181: ${hypotenuse(19, 180) === 181 ? 'Passed' : 'Failed'}</div>   
+`;
