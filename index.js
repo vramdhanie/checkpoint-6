@@ -134,3 +134,24 @@ drill_9.innerHTML = `
    <div class="result">$0.57: ${coinChange(57) == '2 25 cent pieces, 0 ten cent pieces, 1 five cent pieces and 2 one cent pieces' ? 'Passed' : 'Failed'}</div>
    <div class="result">$0.19: ${coinChange(19) == '0 25 cent pieces, 1 ten cent pieces, 1 five cent pieces and 4 one cent pieces' ? 'Passed' : 'Failed'}</div>
 `;
+
+function greet(user) {
+  if(user.logged_in) {
+    return `Hello ${user.firstname} ${user.lastname}`;
+  } else {
+    return `Welcome, please log in`;
+  }
+}
+
+const drill_10 = document.getElementById('drill_10');
+const sam = {
+  id: 3224,
+  logged_in: true,
+  firstname: "Samwise",
+  lastname: "Gamgee"
+}
+drill_10.innerHTML = `
+   <h2>Personalized Greeting</h2>
+   <div class="result">Samwise Gamgee: ${greet(sam) == 'Hello Samwise Gamgee' ? 'Passed' : 'Failed'}</div>
+   <div class="result">No one: ${greet({id:1,logged_in: false}) == 'Welcome, please log in' ? 'Passed' : 'Failed'}</div>  
+`;
