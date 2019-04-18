@@ -254,3 +254,26 @@ drill_13.innerHTML = `
    <div class="result">121: ${palindrome(121) == 'Incorrect input' ? 'Passed' : 'Failed'}</div>
    <div class="result">1234321: ${palindrome(1234321) == 'Incorrect input' ? 'Passed' : 'Failed'}</div>
 `;
+
+
+//drill 14 a.
+let x = 5;
+let y = 11;
+if(x < 10)
+if(y > 10)
+console.log('Yes');
+else
+console.log('No');
+console.log('Maybe');
+
+//drill 14 b.
+let x = 5;
+let y = 11;
+if(x < 10){
+if(y > 10)
+console.log('Yes');
+}
+else {
+console.log('No');
+console.log('Maybe');
+}
