@@ -184,3 +184,38 @@ drill_11.innerHTML = `
    <div class="result">200kWh => $58: ${electricBill(200) == 58 ? 'Passed' : 'Failed'}</div>
    <div class="result">600kWh => $174: ${electricBill(600) == 174 ? 'Passed' : 'Failed'}</div>
 `;
+
+
+function creditLimit(user) {
+  const new_balance = user.balance_beginning_of_month + user.total_charges_in_month - user.total_credits_in_month;
+  if(new_balance > user.credit_limit) {
+    return 'Credit limit exceeded';
+  } else {
+    return 'Credit available';
+  }
+}
+
+const drill_12 = document.getElementById('drill_12');
+const user1 = {
+    account_number: 12345,
+    name: 'Brie Larson',
+    balance_beginning_of_month: 300,
+    total_charges_in_month: 700,
+    total_credits_in_month: 200,
+    credit_limit: 500
+  }
+
+const user2 = {
+    account_number: 12345,
+    name: 'Brie Larson',
+    balance_beginning_of_month: 300,
+    total_charges_in_month: 700,
+    total_credits_in_month: 200,
+    credit_limit: 900
+  }
+
+drill_12.innerHTML = `
+   <h2>Credit Limit</h2>
+   <div class="result">No credit: ${creditLimit(user1) == 'Credit limit exceeded' ? 'Passed' : 'Failed'}</div>
+   <div class="result">Credit: ${creditLimit(user2) == 'Credit available' ? 'Passed' : 'Failed'}</div>
+`;
