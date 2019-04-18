@@ -155,3 +155,32 @@ drill_10.innerHTML = `
    <div class="result">Samwise Gamgee: ${greet(sam) == 'Hello Samwise Gamgee' ? 'Passed' : 'Failed'}</div>
    <div class="result">No one: ${greet({id:1,logged_in: false}) == 'Welcome, please log in' ? 'Passed' : 'Failed'}</div>  
 `;
+
+function electricBill(kwh) {
+  let total = 6;
+  if(kwh > 1000) {
+    total = total + ((kwh - 1000)* 0.37);
+    kwh = 1000;
+  } 
+
+  if(kwh > 400) {
+    total = total + ((kwh - 400) * 0.32);
+    kwh = 400;
+  } 
+
+  total = total + (kwh * 0.26);
+  
+  return total;
+
+}
+
+const drill_11 = document.getElementById('drill_11');
+drill_11.innerHTML = `
+   <h2>Electric Bill</h2>
+   <div class="result">0kWh => $6: ${electricBill(0) == 6 ? 'Passed' : 'Failed'}</div>
+   <div class="result">400kWh => $110: ${electricBill(400) == 110 ? 'Passed' : 'Failed'}</div>
+   <div class="result">1000kWh => $302: ${electricBill(1000) == 302 ? 'Passed' : 'Failed'}</div>
+   <div class="result">1200kWh => $376: ${electricBill(1200) == 376 ? 'Passed' : 'Failed'}</div>
+   <div class="result">200kWh => $58: ${electricBill(200) == 58 ? 'Passed' : 'Failed'}</div>
+   <div class="result">600kWh => $174: ${electricBill(600) == 174 ? 'Passed' : 'Failed'}</div>
+`;
