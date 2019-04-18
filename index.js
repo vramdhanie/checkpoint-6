@@ -219,3 +219,38 @@ drill_12.innerHTML = `
    <div class="result">No credit: ${creditLimit(user1) == 'Credit limit exceeded' ? 'Passed' : 'Failed'}</div>
    <div class="result">Credit: ${creditLimit(user2) == 'Credit available' ? 'Passed' : 'Failed'}</div>
 `;
+
+
+function palindrome(n) {
+  if(n > 99999 || n < 10000) {
+    return 'Incorrect input';
+  }
+
+  const first_digit = Math.trunc(n / 10000);
+  const last_digit = n % 10;
+  const first_and_last = first_digit === last_digit;
+
+  n = n % 10000;
+  n = Math.trunc(n / 10);
+
+  const second_digit = Math.trunc(n / 100);
+  const second_to_last_digit = n % 10;
+  const second_digits = second_digit === second_to_last_digit;
+
+  if(first_and_last && second_digits) {
+    return 'Yes, it is a palindrome';
+  } else {
+    return 'No, not a palindrome';
+  }
+
+}
+
+const drill_13 = document.getElementById('drill_13');
+drill_13.innerHTML = `
+   <h2>Palindrome</h2>
+   <div class="result">12321: ${palindrome(12321) == 'Yes, it is a palindrome' ? 'Passed' : 'Failed'}</div>
+   <div class="result">12345: ${palindrome(12345) == 'No, not a palindrome' ? 'Passed' : 'Failed'}</div>
+   <div class="result">11111: ${palindrome(11111) == 'Yes, it is a palindrome' ? 'Passed' : 'Failed'}</div>
+   <div class="result">121: ${palindrome(121) == 'Incorrect input' ? 'Passed' : 'Failed'}</div>
+   <div class="result">1234321: ${palindrome(1234321) == 'Incorrect input' ? 'Passed' : 'Failed'}</div>
+`;
