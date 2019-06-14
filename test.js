@@ -19,7 +19,8 @@ if (typeof celciusToFahrenheit === 'function') {
 }
 
 const drill_2 = document.getElementById('drill_2');
-drill_2.innerHTML = `
+if (typeof circleArea === 'function') {
+  drill_2.innerHTML = `
    <div class="result">r=0 => 0: ${
      circleArea(0) === 0 ? 'Passed' : 'Failed'
    }</div>
@@ -30,9 +31,13 @@ drill_2.innerHTML = `
      Math.round(circleArea(10)) === 314 ? 'Passed' : 'Failed'
    }</div> 
 `;
+} else {
+  drill_2.innerHTML = "Write the function named 'circleArea'";
+}
 
 const drill_3 = document.getElementById('drill_3');
-drill_3.innerHTML = `
+if (typeof integerDivision === 'function') {
+  drill_3.innerHTML = `
    <div class="result">4 / 2 => 2 r 0: ${
      integerDivision(4, 2) === '4 / 2 is 2 with remainder 0'
        ? 'Passed'
@@ -54,9 +59,13 @@ drill_3.innerHTML = `
        : 'Failed'
    }</div>   
 `;
+} else {
+  drill_3.innerHTML = "Write the function named 'integerDivision'";
+}
 
 const drill_4 = document.getElementById('drill_4');
-drill_4.innerHTML = `
+if (typeof integerDivision2 === 'function') {
+  drill_4.innerHTML = `
    <div class="result">4 / 2 => 2 r 0: ${
      integerDivision2(4, 2) === '4 / 2 is 2 with remainder 0'
        ? 'Passed'
@@ -68,9 +77,13 @@ drill_4.innerHTML = `
        : 'Failed'
    }</div>   
 `;
+} else {
+  drill_4.innerHTML = "Write the function named 'integerDivision2'";
+}
 
 const drill_5 = document.getElementById('drill_5');
-drill_5.innerHTML = `
+if (typeof hypotenuse === 'function') {
+  drill_5.innerHTML = `
    <div class="result">3, 4, 5: ${
      hypotenuse(3, 4) === 5 ? 'Passed' : 'Failed'
    }</div>
@@ -84,9 +97,13 @@ drill_5.innerHTML = `
      hypotenuse(19, 180) === 181 ? 'Passed' : 'Failed'
    }</div>   
 `;
+} else {
+  drill_5.innerHTML = "write the function named 'hypotenuse'";
+}
 
 const drill_6 = document.getElementById('drill_6');
-drill_6.innerHTML = `
+if (typeof canFit === 'function') {
+  drill_6.innerHTML = `
    <div class="result">3, 4, 5: ${canFit(3, 4, 5) ? 'Passed' : 'Failed'}</div>
    <div class="result">5, 12, 20: ${
      canFit(5, 12, 20) ? 'Passed' : 'Failed'
@@ -98,25 +115,37 @@ drill_6.innerHTML = `
      canFit(19, 180, 100) ? 'Failed' : 'Passed'
    }</div>   
 `;
+} else {
+  drill_6.innerHTML = "Write the function named 'canFit'";
+}
 
 const drill_7 = document.getElementById('drill_7');
-drill_7.innerHTML = `
+if (typeof isOdd === 'function') {
+  drill_7.innerHTML = `
    <div class="result">20: ${isOdd(20) ? 'Failed' : 'Passed'}</div>
    <div class="result">21: ${isOdd(21) ? 'Passed' : 'Failed'}</div>
    <div class="result">0: ${isOdd(0) ? 'Failed' : 'Passed'}</div>   
 `;
+} else {
+  drill_7.innerHTML = "Write the function named 'isOdd'";
+}
 
 const drill_8 = document.getElementById('drill_8');
-drill_8.innerHTML = `
+if (typeof pinGenerator === 'function') {
+  drill_8.innerHTML = `
    <div class="result">1: ${pinGenerator() % 2 == 0 ? 'Passed' : 'Failed'}</div>
    <div class="result">2: ${pinGenerator() % 2 == 0 ? 'Passed' : 'Failed'}</div>
    <div class="result">3: ${
      pinGenerator() % 2 == 0 ? 'Passed' : 'Failed'
    }</div>   
 `;
+} else {
+  drill_8.innerHTML = "Write the function named 'pinGenerator'";
+}
 
 const drill_9 = document.getElementById('drill_9');
-drill_9.innerHTML = `
+if (typeof coinChange === 'function') {
+  drill_9.innerHTML = `
    <div class="result">$1.00: ${
      coinChange(100) ==
      '4 25 cent pieces, 0 ten cent pieces, 0 five cent pieces and 0 one cent pieces'
@@ -154,6 +183,9 @@ drill_9.innerHTML = `
        : 'Failed'
    }</div>
 `;
+} else {
+  drill_9.innerHTML = "Write the function named 'coinChange'";
+}
 
 const drill_10 = document.getElementById('drill_10');
 const sam = {
@@ -162,7 +194,8 @@ const sam = {
   firstname: 'Samwise',
   lastname: 'Gamgee'
 };
-drill_10.innerHTML = `
+if (typeof greet === 'function') {
+  drill_10.innerHTML = `
    <div class="result">Samwise Gamgee: ${
      greet(sam) == 'Hello Samwise Gamgee' ? 'Passed' : 'Failed'
    }</div>
@@ -172,9 +205,13 @@ drill_10.innerHTML = `
        : 'Failed'
    }</div>  
 `;
+} else {
+  drill_10.innerHTML = "Write the function named 'greet'";
+}
 
 const drill_11 = document.getElementById('drill_11');
-drill_11.innerHTML = `
+if (typeof electricBill === 'function') {
+  drill_11.innerHTML = `
    <div class="result">0kWh => $6: ${
      electricBill(0) == 6 ? 'Passed' : 'Failed'
    }</div>
@@ -194,27 +231,31 @@ drill_11.innerHTML = `
      electricBill(600) == 174 ? 'Passed' : 'Failed'
    }</div>
 `;
+} else {
+  drill_11.innerHTML = "Write teh function named 'electricBill'";
+}
 
 const drill_12 = document.getElementById('drill_12');
-const user1 = {
-  account_number: 12345,
-  name: 'Brie Larson',
-  balance_beginning_of_month: 300,
-  total_charges_in_month: 700,
-  total_credits_in_month: 200,
-  credit_limit: 500
-};
+if (typeof creditLimit === 'function') {
+  const user1 = {
+    account_number: 12345,
+    name: 'Brie Larson',
+    balance_beginning_of_month: 300,
+    total_charges_in_month: 700,
+    total_credits_in_month: 200,
+    credit_limit: 500
+  };
 
-const user2 = {
-  account_number: 12345,
-  name: 'Brie Larson',
-  balance_beginning_of_month: 300,
-  total_charges_in_month: 700,
-  total_credits_in_month: 200,
-  credit_limit: 900
-};
+  const user2 = {
+    account_number: 12345,
+    name: 'Brie Larson',
+    balance_beginning_of_month: 300,
+    total_charges_in_month: 700,
+    total_credits_in_month: 200,
+    credit_limit: 900
+  };
 
-drill_12.innerHTML = `
+  drill_12.innerHTML = `
    <div class="result">No credit: ${
      creditLimit(user1) == 'Credit limit exceeded' ? 'Passed' : 'Failed'
    }</div>
@@ -222,9 +263,13 @@ drill_12.innerHTML = `
      creditLimit(user2) == 'Credit available' ? 'Passed' : 'Failed'
    }</div>
 `;
+} else {
+  drill_12.innerHTML = "Write the function named 'creditLimit'";
+}
 
 const drill_13 = document.getElementById('drill_13');
-drill_13.innerHTML = `
+if (typeof palindrome === 'function') {
+  drill_13.innerHTML = `
    <div class="result">12321: ${
      palindrome(12321) == 'Yes, it is a palindrome' ? 'Passed' : 'Failed'
    }</div>
@@ -241,3 +286,6 @@ drill_13.innerHTML = `
      palindrome(1234321) == 'Incorrect input' ? 'Passed' : 'Failed'
    }</div>
 `;
+} else {
+  drill_13.innerHTML = "Write the function named 'palindrome'";
+}
