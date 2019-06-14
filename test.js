@@ -98,7 +98,7 @@ if (typeof hypotenuse === 'function') {
    }</div>   
 `;
 } else {
-  drill_5.innerHTML = "write the function named 'hypotenuse'";
+  drill_5.innerHTML = "Write the function named 'hypotenuse'";
 }
 
 const drill_6 = document.getElementById('drill_6');
